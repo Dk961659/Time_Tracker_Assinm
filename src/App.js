@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React from 'react';
+import ProjectForm from './components/ProjectForm';
+import ProjectList from './components/ProjectList';
+import TaskForm from './components/TaskForm';
+import ProjectDetails from './components/ProjectDetails';
+import { AppProvider } from './context/AppContext';
+import './index.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppProvider>
+      <div className='main-container '>
+        <h1>Time Tracking Application</h1>
+
+        <div>
+          <h2>Create Project</h2>
+          <ProjectForm />
+        </div>
+
+        <div>
+          
+          <ProjectList />
+        </div>
+
+        <div className='task-form-style'>
+          <h2>Create Task</h2>
+          <TaskForm />
+        </div>
+
+        <div>
+          
+          <ProjectDetails />
+        </div>
+      </div>
+    </AppProvider>
   );
 }
 
